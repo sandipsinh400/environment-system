@@ -1,10 +1,12 @@
 const express = require('express')
 const { default: mongoose } = require('mongoose')
 const app = express()
+var cors = require('cors')
 const port = 3000
 
 
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req, res) => res.send('Hello55 World!'))
